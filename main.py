@@ -1,5 +1,8 @@
 from config import app
 from random import randint
+from config import Flask, render_template
+
+from models import Flat
 
 
 @app.route("/")
@@ -23,6 +26,11 @@ def info(name, age):
 def random(a, b):
     r = randint(int(a), int(b))
     return str(r)
+
+@app.route("/flats/")
+def flats_view():
+    flats = Flat.query.all()
+    return render_template("flats.html", flts = flats)
 
 
 app.run(debug=True)
