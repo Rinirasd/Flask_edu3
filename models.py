@@ -12,10 +12,9 @@ class Human(db.Model):
     age: int = db.Column(db.String(3), index=True, unique=False)
     country: str = db.Column(db.String(50), index=True, unique=False)
     bio: str = db.Column(db.String(10000), index=True, unique=False)
-    datetime: str = db.Column(db.DateTime, default=datetime.utcnow)
 
 class Flat(db.Model):
-    price = db.Column(db.Integer, primary_key=True)
+    price : int = db.Column(db.String(3), index=True, unique=False)
     condition : str = db.Column(db.String(30), index=True, unique=False)
     furniture : str = db.Column(db.String(30), index=True, unique=False)
     city: str = db.Column(db.String(30), index=True, unique=False)
