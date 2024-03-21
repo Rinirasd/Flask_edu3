@@ -27,10 +27,11 @@ def random(a, b):
     r = randint(int(a), int(b))
     return str(r)
 
+
 @app.route("/flats/")
 def flats_view():
     flats = Flat.query.all()
-    return render_template("flats.html", flts = flats)
+    return render_template("flats.html", flats=flats)
 
 
 app.run(debug=True)

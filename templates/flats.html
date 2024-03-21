@@ -1,12 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{% for i in flats %}
- {{i.
-{% endfor %}
-</body>
-</html>
+{% extends "wrapper.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<div class="container-xl" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+  <div class="row">
+    {% for flat in flats %}
+    <div class="col">
+      <tbody>
+
+		<table>
+
+			<tr>
+				<td>
+					<div class="card mb-3" >
+  					  	<div class="row g-0">
+    						<div class="col-md-300">
+      							<img src="{{ flat.district }}"  width="400" height="220">
+    							</div>
+    							<div class="col-md-8">
+      								<div class="card-body">
+        								<h5 class="card-title">Квартира</h5>
+        								<p class="card-text" color="black">Место нахождения : {{ flat.city }}, Кол-во комнат : {{ flat.rooms }}</p>
+                                        <p>Цена : {{ flat.price}} </p>
+        								<p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+      								</div>
+    							</div>
+  					   			</div>
+							</div>
+                        </div>
+					</div>
+				</td>
+            </tr>
+
+         </table>
+
+       </tbody>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
