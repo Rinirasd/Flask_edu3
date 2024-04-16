@@ -24,3 +24,4 @@ class Flat(db.Model):
     type_buildings_of_house: str = db.Column(db.String(30), index=True, unique=False)
     rooms:  int = db.Column(db.String(4), index=True, unique=False)
     floor:  int = db.Column(db.String(4), index=True, unique=False)
+
