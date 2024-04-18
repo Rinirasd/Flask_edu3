@@ -34,4 +34,4 @@ def flats_view():
     return render_template("flats.html", flats=flats)
 
 
-app.run(debug=True)
+app.run(host = "0.0.0.0", debug=True)
